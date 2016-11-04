@@ -26,7 +26,7 @@ export default <any>Task.extend({
       runTaskOptions.aot
     ).config;
 
-    // fail on build error
+    // allow build despite TS errors, cuz one cannot 100% [resolve these](https://esdiscuss.org/topic/es8-proposal-optional-static-typing#content-8)
     config.bail = true;
 
     const webpackCompiler: any = webpack(config);
