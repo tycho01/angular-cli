@@ -1,0 +1,7 @@
+ul(*ngIf='<%= camelizedModuleName %>s$ | async')
+  li(*ngFor='let <%= camelizedModuleName %> of <%= camelizedModuleName %>s$ | async')
+    <%= dasherizedModuleName %>-detail([<%= camelizedModuleName %>]='<%= camelizedModuleName %>')
+button(md-fab (click)='create_<%= camelizedModuleName %>()')
+  //- api.new()
+  md-icon add
+
