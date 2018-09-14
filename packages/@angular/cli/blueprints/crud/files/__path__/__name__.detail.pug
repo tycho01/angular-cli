@@ -2,10 +2,10 @@ include ../mixins.pug
 +asyncs({ foo: 'foo$' })
   <%= dasherizedModuleName %>-shared(*ngIf='<%= camelizedModuleName %>' [<%= camelizedModuleName %>]='<%= camelizedModuleName %>')
 
-  .items(*ngIf='<%= camelizedModuleName %>.items')
+  //- .items(*ngIf='<%= camelizedModuleName %>.items')
     ul
       li(*ngFor='let item of <%= camelizedModuleName %>.items')
-        <%= dasherizedModuleName %>-item-shared([item]='item')
+        //- <%= dasherizedModuleName %>-item-shared([item]='item')
     button(md-fab (click)='create()')
       md-icon add
 

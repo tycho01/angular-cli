@@ -7,14 +7,14 @@
     md-card-content
       form
         - for ['name','phone','address']
-        md-input(
+        input(mdInput
           type='text'
-          placeholder="{{tr.name()}}"
+          placeholder='{{tr.name()}}' 
+          mdSuffix='%&nbsp;'
           '[(ngModel)]'='<%= camelizedModuleName %>.name'
           '[ngModelOptions]'='{standalone: true}'
           '(ngModelChange)'='update(<%= camelizedModuleName %>)'
         )
-          span(md-suffix) %&nbsp;
       form.dialog
         select(
           *ngIf='customers | async'
@@ -36,7 +36,7 @@
       p
         | {{tr.revenue()}} : {{item.revenue}}
     md-card-content(*ngFor='let item of invoice.items')
-      invoice-item-detail([item]='item')
+      //- invoice-item-detail([item]='item')
     md-divider
     md-card-actions
       button(md-raised-button color='primary' (click)='create_item()') {{tr.addItem() }}

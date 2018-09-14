@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { make } from '../../factories';
 import * as MyApp from '../../models'; // { <%= classifiedModuleName %>, <%= classifiedModuleName %>Item }
-import { DISPATCHER } from '../../app.module';
+import { DISPATCHER } from '../../di';
 import { AppService } from '../../services/';
 
 @Component({
@@ -22,9 +22,9 @@ export class <%= classifiedModuleName %>Comp {
     public app: AppService,
     public route: ActivatedRoute,
     public store: Store<any>,
-    @Inject(DISPATCHER) dispatcher: { <%= camelizedModuleName %>: { [k: string]: (pl: any) => void } },
+    @Inject(DISPATCHER) dispatcher: { /*<%= camelizedModuleName %>*/crud: { [k: string]: (pl: any) => void } },
   ) {
-    this.disp = dispatcher.<%= camelizedModuleName %>;
+    this.disp = dispatcher.crud/*<%= camelizedModuleName %>*/;
   }
 
   ngOnInit() {
